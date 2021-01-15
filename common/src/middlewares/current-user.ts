@@ -6,17 +6,11 @@ interface UserPayload {
     email: string;
 }
 
-// declare global {
-//     namespace Express {
-//         interface Request {
-//             currentUser?: UserPayload;
-//         }
-//     }
-// }
-
-declare module 'express-serve-static-core' {
-    interface Request {
-        currentUser?: UserPayload;
+declare global {
+    namespace Express {
+        interface Request {
+            currentUser?: UserPayload;
+        }
     }
 }
 
