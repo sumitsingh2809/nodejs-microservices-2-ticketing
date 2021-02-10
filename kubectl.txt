@@ -3,3 +3,8 @@ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 
 --- Get all secrets
 kubectl get secrets
+
+--- ERROR:
+Error from server (InternalError): error when creating "nginx-svc.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": Post
+--- SOLUTION:
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
