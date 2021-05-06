@@ -1,0 +1,10 @@
+kubectl get pods
+kubectl port-forward nats-depl-5485bddbd5-7rxr4 4222:4222
+kubectl port-forward nats-depl-5485bddbd5-7rxr4 8222:8222
+(
+    http://localhost:8222/streaming
+    http://localhost:8222/streaming/channelsz?subs=1
+)
+
+npm run publish
+npm run listen
